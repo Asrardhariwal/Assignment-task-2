@@ -1,11 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Data} from './apidata/Data';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      
       <Data />
     </View>
   );

@@ -1,25 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {
-  View,
-  StyleSheet,
-  Text,
-  Image,
-  ScrollView,
-  SafeAreaView,
-} from 'react-native';
+import {View, StyleSheet, Text, Image, SafeAreaView} from 'react-native';
 
 export const Data = () => {
   const [data, setData] = useState([]);
-
-  // const fetchuser = async () => {
-  //   axios.get(`https://reqres.in/api/users/2`).then((res) => {
-  //     debugger;
-  //     const users = res.data;
-  //     debugger;
-  //   });
-  // };
-
+  // fetching DATA
   useEffect(() => {
     axios.get(`https://reqres.in/api/users/2`).then((res) => {
       const users = res.data.data;
@@ -31,7 +16,7 @@ export const Data = () => {
   const user = data.map((user) => {
     return (
       <View key={user.id}>
-        <SafeAreaView style={{borderWidth:0.5,justifyContent:'center'}}>
+        <SafeAreaView style={{borderWidth: 0.5, justifyContent: 'center'}}>
           <Image
             style={styles.stretch}
             source={{uri: 'https://reqres.in/img/faces/2-image.jpg'}}
@@ -39,7 +24,6 @@ export const Data = () => {
           <Text>First Name:-{user.first_name}</Text>
           <Text>Last Name:-{user.last_name}</Text>
           <Text>Email:-{user.email}</Text>
-          
         </SafeAreaView>
       </View>
     );
@@ -55,8 +39,8 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     resizeMode: 'stretch',
-    borderWidth:1,
-    borderColor:'blue',
-    borderRadius:50,
+    borderWidth: 1,
+    borderColor: 'blue',
+    borderRadius: 50,
   },
 });
